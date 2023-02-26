@@ -1,0 +1,50 @@
+@echo off
+chcp 65001
+title Остановка служб
+COLOR 06
+cls
+echo.
+echo.
+:start
+echo        Батник "убивает" зависшую службу
+echo        1. Остановка службы ....
+echo        2. Остановка службы ....
+echo        3. Остановка службы ....
+echo        4. Остановка службы ....
+echo        5. Остановка службы ....
+echo        6. Выход (закрыть консоль)
+echo.
+set /p choice=        Введите нужный пункт:
+rem if not '%choice%'=='' set choice=%choice:~0;1%
+if '%choice%'=='1' goto 1
+if '%choice%'=='2' goto 2
+if '%choice%'=='3' goto 3
+if '%choice%'=='4' goto 4
+if '%choice%'=='5' goto 5
+if '%choice%'=='6' goto 6
+if not '%choice%'=='' echo "%choice%" неверный пунк
+echo
+
+goto start
+:1
+taskkill /F /FI "SERVICES eq ...."
+
+goto start
+:2
+taskkill /F /FI "SERVICES eq ...."
+
+goto start
+:3
+taskkill /F /FI "SERVICES eq ...."
+
+goto start
+:4
+taskkill /F /FI "SERVICES eq ...."
+
+goto start
+:5
+taskkill /F /FI "SERVICES eq ...."
+
+goto start
+:6
+exit
